@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,6 +20,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 from datetime import timedelta
+ENVIRONMENT = os.getenv('ENVIRONMENT', default='production')
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +30,10 @@ from datetime import timedelta
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -105,6 +109,9 @@ DATABASES = {
     }
 }
 
+POSTGRES_LOCALLY = False
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
 AUTH_USER_MODEL = 'users.User'
 
 # Password validation

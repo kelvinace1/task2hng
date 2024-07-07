@@ -1,0 +1,17 @@
+*.pyc
+__pycache__
+db.sqlite3
+/env
+*.env
+.vscode
+# Ignore system directories
+Application Data/
+Cookies/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/

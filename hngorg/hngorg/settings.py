@@ -29,12 +29,12 @@ from datetime import timedelta
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
-ENVIRONMENT = os.getenv('ENVIRONMENT' , default='production')
+#ENVIRONMENT = os.getenv('ENVIRONMENT' , default='production')
 # SECURITY WARNING: don't run with debug turned on in production!
-if ENVIRONMENT == 'development':
-    DEBUG = True
-else:
-    DEBUG = False
+#if ENVIRONMENT == 'development':
+ #   DEBUG = True
+#else:
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 #CSRF_TRUSTED_ORIGINS = ['https://task2hng-production.up.railway.app']

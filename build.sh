@@ -9,8 +9,6 @@ source venv/Scripts/activate
 # Initialize and update git submodules (if any)
 export DJANGO_SETTINGS_MODULE=hngorg.settings.production
 
-git submodule init
-git submodule update
 
 echo "building the project"
 pip install -r requirements.txt

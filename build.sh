@@ -1,7 +1,7 @@
 #!/bin/bash
 # Exit immediately if a command exits with a non-zero status
 set -e
-
+python3.9 -m venv venv
 source venv/bin/activate 
 # Initialize and update git submodules (if any)
 git submodule init

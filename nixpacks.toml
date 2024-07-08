@@ -4,7 +4,7 @@ postgresql = true
 gcc = true
 
 [install]
-command = "python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt"
+command = "python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requireme.txt"
 
 [start]
 command = "python manage.py runserver"

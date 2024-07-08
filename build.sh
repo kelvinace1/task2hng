@@ -14,6 +14,7 @@ echo "building the project"
 pip install -r requirements.txt
 
 echo "make migrations..."
+echo "hope"
 python manage.py makemigrations --noinput
 python manage.py migrate --noinput
 

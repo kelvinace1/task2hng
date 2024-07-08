@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -110,9 +111,13 @@ DATABASES = {
     }
 }
 
-POSTGRES_LOCALLY = False
+DATABASES['default'] = dj_database_url.config()
+
+"""POSTGRES_LOCALLY = False
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
-    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL')) """
+
+
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -151,7 +156,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/path/to/your/static/files/'
+STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

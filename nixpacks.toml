@@ -1,23 +1,11 @@
-name = "your-app-name"
-version = "1.0.0"
-description = "Description of your application"
+[setup]
+python3 = true
+postgresql = true
+gcc = true
 
-[[setup]]
-  name = "python3"
-  version = "3.9"
-  binary = true
+[install]
+command = "python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt"
 
-[[setup]]
-  name = "postgresql"
-  version = "16"
+[start]
+command = "python manage.py runserver"
 
-[[setup]]
-  name = "gcc"
-
-[[install]]
-  name = "python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt"
-
-[[start]]
-  name = "gunicorn"
-  version = "20.1.0"
-  args = ["-b", "0.0.0.0:8000", "hngorg.wsgi:application"]

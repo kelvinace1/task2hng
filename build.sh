@@ -7,7 +7,7 @@ set -e
 
 
 # Initialize and update git submodules (if any)
-
+source venv/bin/activate
 
 
 echo "building the project"

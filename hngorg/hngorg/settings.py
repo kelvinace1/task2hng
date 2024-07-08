@@ -15,11 +15,12 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+import dotenv
 from dotenv import load_dotenv
 import os
 load_dotenv()
 from datetime import timedelta
+import dj_database_url
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,9 +28,12 @@ from datetime import timedelta
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
-
+ENVIRONMENT = os.getenv('ENVIRONMENT' , default='production')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -104,6 +108,10 @@ DATABASES = {
         'PORT': os.getenv("DB_PORT"),
     }
 }
+
+POSTGRES_LOCALLY = False
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
 
 AUTH_USER_MODEL = 'users.User'
 

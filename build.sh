@@ -5,7 +5,7 @@ set -e
 
 # Corrected path with backslashes for Windows
 
-source venv/Scripts/activate
+source /c/Users/USER/hngorg/venv/Scripts/activate
 # Initialize and update git submodules (if any)
 export DJANGO_SETTINGS_MODULE=hngorg.settings.production
 

@@ -7,7 +7,7 @@ set -e
 
 
 # Initialize and update git submodules (if any)
-export DJANGO_SETTINGS_MODULE=hngorg.settings.production
+
 
 
 echo "building the project"

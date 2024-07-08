@@ -11,12 +11,12 @@ export DJANGO_SETTINGS_MODULE=hngorg.settings.production
 
 
 echo "building the project"
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 echo "make migrations..."
 echo "hope"
-python manage.py makemigrations --noinput
-python manage.py migrate --noinput
+python3 -m manage.py makemigrations --noinput
+python3 -m manage.py migrate --noinput
 
 echo "collect static..."
-python manage.py collectstatic --noinput --clear
+python3 -m manage.py collectstatic --noinput --clear

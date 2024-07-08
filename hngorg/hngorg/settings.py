@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 #else:
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost']
+ALLOWED_HOSTS = ['hngorg.vercel.app', 'localhost']
 #CSRF_TRUSTED_ORIGINS = ['https://task2hng-production.up.railway.app']
 
 
@@ -101,8 +101,11 @@ SIMPLE_JWT = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
+
+
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 """POSTGRES_LOCALLY = False
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:

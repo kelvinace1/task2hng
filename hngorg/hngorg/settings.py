@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 #else:
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'hngorg.vercel.app']
+ALLOWED_HOSTS = ['hngorg.vercel.app', 'localhost']
 #CSRF_TRUSTED_ORIGINS = ['https://task2hng-production.up.railway.app']
 
 

@@ -11,7 +11,7 @@ export DJANGO_SETTINGS_MODULE=hngorg.settings.production
 
 
 echo "building the project"
-pip install -r requirements.txt
+python3.9 -m pip install -r requirements.txt
 
 echo "make migrations..."
 python manage.py makemigrations --noinput

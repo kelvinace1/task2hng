@@ -30,11 +30,11 @@ from datetime import timedelta
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 #ENVIRONMENT = os.getenv('ENVIRONMENT' , default='production')
-# SECURITY WARNING: don't run with debug turned on in production!
+
 #if ENVIRONMENT == 'development':
  #   DEBUG = True
 #else:
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['hngorg.vercel.app', 'localhost']
 #CSRF_TRUSTED_ORIGINS = ['https://task2hng-production.up.railway.app']
@@ -111,7 +111,8 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config()
+
+DATABASES['default'] = dj_database_url.config(default=os.getenv('DATABASE_URL'))
 
 """POSTGRES_LOCALLY = False
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:

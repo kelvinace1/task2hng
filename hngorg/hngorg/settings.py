@@ -35,7 +35,8 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://task2hng-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://task2hng-production.up.railway.app']
 
 
 # Application definition

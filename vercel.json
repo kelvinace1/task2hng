@@ -17,17 +17,7 @@
         }
       }
     ],
-    "routes": [
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
-    
-        {
-            "src": "/(.*)",
-            "dest": "/hngorg/wsgi.py"
-        }
-    ],
+
     "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]

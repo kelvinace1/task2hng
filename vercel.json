@@ -27,6 +27,10 @@
             "src": "/(.*)",
             "dest": "/hngorg/wsgi.py"
         }
-    ]
+    ],
+    "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+    
     }
   

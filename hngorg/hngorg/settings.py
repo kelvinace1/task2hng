@@ -102,14 +102,14 @@ SIMPLE_JWT = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv("DB_NAME"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
       
     }
 }
-
-
-DATABASES['default'] = dj_database_url.config()
+database_url = os.environ.get("DATABASE_URL")
+#postgresql://hngorg_render_user:n0x8em78g4DadmQxJI2z0hYc2ftIsT2y@dpg-cq6g7srv2p9s73clphkg-a.oregon-postgres.render.com/hngorg_render
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 """POSTGRES_LOCALLY = False
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:

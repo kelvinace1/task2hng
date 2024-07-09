@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from users.models import User 
 import uuid
 
-
+a=1
 @api_view(['POST', 'GET'])
 @permission_classes([IsAuthenticated])
 def create_organisation(request):

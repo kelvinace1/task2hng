@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['hngorg.onrender.com', 'hngorg.vercel.app', 'localhost']
+ALLOWED_HOSTS = ['hngorg.onrender.com', 'https://hngorg-q1cldt63m-kelvinace1s-projects.vercel.app', 'localhost']
 
 
 # Application definition
